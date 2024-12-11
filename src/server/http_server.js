@@ -52,6 +52,11 @@ class NodeHttpServer {
     });
   };
 
+  stop = () => {
+    this.httpServer?.close();
+    this.httpsServer?.close();
+  };
+
   /**
    * @param {express.Request} req
    * @param {express.Response} res
