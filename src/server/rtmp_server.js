@@ -39,6 +39,11 @@ class NodeRtmpServer {
     });
   };
 
+  stop = () => {
+    this.tcpServer?.close();
+    this.tlsServer?.close();
+  };
+
   /**
    * @param {net.Socket} socket 
    */
