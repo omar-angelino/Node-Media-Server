@@ -110,6 +110,9 @@ class RtmpSession extends BaseSession {
     logger.info(`RTMP session ${this.id} close`);
     if (this.isPublisher) {
       this.broadcast.donePush(this);
+      if (this.ctx.config.eventEmitter) {
+        this.ctx.config.eventEmitter.emit('onClose', {id: this.id, streamPath: this.streamPath});
+      }
     } else {
       this.broadcast.donePlay(this);
     }
