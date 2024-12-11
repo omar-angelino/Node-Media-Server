@@ -72,6 +72,10 @@ class RtmpSession extends BaseSession {
       logger.error(`RTMP session ${this.id} ${this.ip} push ${this.streamPath} error, ${err}`);
       this.socket.end();
     }
+
+    if (this.ctx.config.eventEmitter) {
+      this.ctx.config.eventEmitter.emit('onPush', {id: this.id, streamPath: this.streamPath});
+    }
   };
 
   /**
