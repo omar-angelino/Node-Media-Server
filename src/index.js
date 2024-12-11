@@ -30,6 +30,11 @@ class NodeMediaServer {
     this.rtmpServer.run();
     
   }
+
+  stop() {
+    this.httpServer.stop();
+    this.rtmpServer.stop();
+  }
 }
 
 module.exports = NodeMediaServer;
