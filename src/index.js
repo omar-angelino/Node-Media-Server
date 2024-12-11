@@ -14,11 +14,6 @@ const NodeRtmpServer = require("./server/rtmp_server.js");
 class NodeMediaServer {
   constructor(config) {
     logger.level = "debug";
-    logger.info(`Node-Media-Server v${Package.version}`);
-    logger.info(`Homepage: ${Package.homepage}`);
-    logger.info(`License: ${Package.license}`);
-    logger.info(`Author: ${Package.author}`);
-
     this.ctx = new Context(config);
     this.httpServer = new NodeHttpServer(this.ctx);
     this.rtmpServer = new NodeRtmpServer(this.ctx);
