@@ -7,7 +7,7 @@
 
 const AMF = require("./amf.js");
 const Flv = require("./flv.js");
-const crypto = require("node:crypto");
+const crypto = require("crypto");
 const logger = require("../core/logger.js");
 const AVPacket = require("../core/avpacket.js");
 
